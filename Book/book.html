@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的学习感受</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		a{color: white;text-decoration: none;cursor: pointer;}
+		body{background: black;color: white;}
+		h3,p{padding: 0 20px 0 20px;}
+		p{text-indent: 2em;}
+		.d{position: relative;left: 0;top: 30px;right: 0;bottom: 0;margin: auto;width: 100px;height: 160px;transform: rotateX(180deg);z-index:-10;}
+		.heart3d{/*3d心形效果盒子*/width: 100px;height: 160px;transform-style: preserve-3d;animation: spin 10s linear infinite ;}
+		@keyframes spin{
+			to{
+				transform: rotateY(360deg);
+			}
+		}
+		.heartRoad{position: absolute;width: 100px;height: 160px;border: solid #f22613;border-width: 1px 1px 0 0;border-radius: 100% 50% 10%/100% 50% 10%;}
+		/*第一个值是设置top-left;而第二个值是top-right和bottom-left并且他们会相等,第三个值是设置bottom-right*/
+		/*立体盒子*/
+		.cube{position: relative;width: 50px;transform-style: preserve-3d;transform:translateX(25px) translateY(74px) translateZ(25px);}
+		.cube div{position: absolute;width: 50px;height: 50px;}
+		.cube div img{width: 50px;height: 50px;transform: rotateX(180deg)}
+		.cube div:nth-child(1){left: 0;top: -50px;transform-origin: bottom;/*旋转默认值*/transform:rotateX(90deg);}
+		.cube div:nth-child(2){left: 0;top: 50px;transform-origin: top;transform: rotateX(-90deg);}
+		.cube div:nth-child(3){left: -50px;top: 0px;transform-origin: right;transform: rotateY(-90deg);}
+		.cube div:nth-child(4){left: 50px;top: 0px;transform-origin: left;transform: rotateY(90deg);}
+		.cube div:nth-child(5){left: 0;top: 0;}
+		.cube div:nth-child(6){left: 0;top: 0;transform: translateZ(-50px);}
+		html>/**/body header{text-align: center;padding: 10px 0px}
+		nav{text-align: center;}
+		nav a{display: inline-block;padding: 10px;color: white;text-decoration: none;}
+		nav a i{display: inline-block;margin-right: 5px;}
+		/*让火狐浏览器能应用iconfont*/
+		@font-face {font-family: "iconfont"; src: url('iconfont.eot'); /* IE9*/src: url('iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */url('iconfont.woff') format('woff'), /* chrome, firefox */ url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */}
+        .iconfont {font-family:"iconfont" !important;font-size:30px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;}
+        .list{padding-left: 10px;padding-top: 10px; }
+        .list a{display: block;padding: 5px 0; }
+        .list span{cursor: pointer;margin-right: 5px;}
+        .s1{width: 10px;height: 10px;display: inline-block;border-radius: 3px;line-height: 10px;text-align: center;border: 1px solid #ffffff; margin-right: 5px;}
+	</style>
+</head>
+<body>
+	<header>Welcome to my forest</header>
+	<nav>
+		<a href="../index.html"><i class="iconfont">&#xe606;</i>About me</a>
+		<a href="../Page/demo.html "><i class="iconfont">&#xe608;</i>Demoes</a>
+		<a><i class="iconfont">&#xe600;</i>Forest book of the forest</a>
+	</nav>
+	<div class="d">
+		<div class="heart3d">
+			<div class="cube">
+				<div><img src="../images/1.jpg"></div>
+				<div><img src="../images/2.jpg"></div>
+				<div><img src="../images/3.jpg"></div>
+				<div><img src="../images/4.jpg"></div>
+				<div><img src="../images/5.jpg"></div>
+				<div><img src="../images/6.jpg"></div>
+			</div>
+		</div>
+	</div>
+	<aside>
+		<h3 style="text-align: center;">在这我要分享我的前端路程，不是知识，而是感受。</h3>
+		<p>在软件开发这个行业中，我们所了解的就是前端与后端，很多人在选择前端的时候都抱着一种前端比后端好学，比后端
+		轻松的心态。我也是这个很多人之一，但是，我想要告诉你的是，如果你已经学了很久的前端了，而你还是这样想的话，那么，你最好还是不要从事这个行业了，因为你会很累，你的发展会很局限，甚至没有发展。当然，如果你现在开始调整心态，认真审视一下你目前所学的，所从事的前端，那么你在这条道路上走下去的机会还是很大的。
+		</p>
+		<p>	我想要告诉目前所有正在学着走向前端工程师或者即将走向前端工程师的小伙伴，前端工程师的道路没有你想的那么
+		简单！你以为的前端工程师只是写一个页面，错，它写的可能是几十个页面。你以为的前端工程师只是写页面，错，它还要你动脑子写逻辑。就算只是一个简单的页面布局，你以为那就简单了吗，先不说CSS那么多的样式定义，光是HTML的标签，你确信你已经知道了所有，用过了所有？而前端工程师，你要知道的可不止HTML标签和CSS，你要知道的还有JavaScript，jQuery。而这些还远远不够，如果你想要成为一名比较优秀的前端开发者，你还要会框架，懂基本的后台，你要能实现后台到前台的简单的交互，所以你要懂数据库、MVC设计模式、后台开发语言等等。
+		</p>
+		<p>	任何知识的学习都不会是简单的，而计算机这个行业，随着时代的发展，更新换代的速度也越来越快，你要不断地融合
+		新的东西，新的知识，这也就是说，入了这一门，你就要不断的学习，你以为的轻松是不存在的，只有好好努力，跟上时代的脚步，你才不会被淘汰，你在这条路上才会走更远，才有发展。</p>
+	</aside>
+</body>
+</html>
+<script type="text/javascript">
+	var heartRoad = document.getElementsByClassName("heart3d")[0];
+	for (var i=0;i<36 ;i++ )
+	{
+		var oDiv = document.createElement("div");
+		oDiv.className = "heartRoad";
+		oDiv.style.transform = "rotateY("+i*10+"deg) rotateZ(45deg) translateX(30px)";
+		heartRoad.appendChild(oDiv);
+	}
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: black;
+            color: white
+        }
+        a{
+            cursor: pointer;
+        }
+        #div1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top:-50px;/*div高度的一半*/ 
+            overflow:hidden;
+            width:400px;
+        }
+        .div2{
+           width: 400px;
+            float: left;
+        }
+        .div3 {
+            width:800px;
+        }
+        .div2 div {
+            width:100px;
+            height:100px;
+            float:left;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+<a onclick="history.back(-1)">返回</a>
+<div id="div1">
+    <div class="div3" >
+        <div class="div2" id="demo1">
+            <div><img src="imgs/01.png"></div>
+            <div><img src="imgs/02.png"></div>
+            <div><img src="imgs/03.jpg"></div>
+            <div><img src="imgs/04.png"></div>
+        </div>
+        <div id="demo2" class="div2"></div>
+    </div>
+
+</div>
+<script>
+    var speed = 30;
+    demo2.innerHTML = demo1.innerHTML;
+    function Marquee() {
+        div1.scrollLeft++;
+        if(div1.scrollLeft==div1.offsetWidth){
+            div1.scrollLeft=0;
+        }
+    }
+    var MyMar=setInterval("Marquee()", speed);
+    div1.onmouseover = function () { clearInterval(MyMar) }
+    div1.onmouseout = function () { MyMar = setInterval(Marquee, speed) }
+</script>
+</body>
+</html>

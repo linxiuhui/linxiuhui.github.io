@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery ui</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <style>
+        body{
+                background: black;
+                color: white
+        }
+        a{
+                cursor: pointer;
+                text-decoration: none;
+                color: white;
+        }
+        .myicon{
+            background: url("css/images/1.jpg");
+            width: 13px;
+            height: 13px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -.25em;
+            position: relative;
+            text-indent: -99999px;
+            overflow: hidden;
+            background-repeat: no-repeat
+        }
+    </style>
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <script src="jQuery/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#a").accordion({
+                icons:{
+                    header:"myicon",
+                    activeHeader:"ui-icon-circle-minus"
+                },
+            });
+        })
+    </script>
+</head>
+<body>
+<a onclick="history.back(-1)">返回</a>
+    <div id="a">
+        <h3>111 </h3>
+        <div>111内容</div>
+        <h3>222</h3>
+        <div>222内容</div>
+        <h3>222</h3>
+        <div>222内容</div>
+    </div>
+</body>
+</html>

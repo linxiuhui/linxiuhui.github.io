@@ -1,0 +1,1558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中国邮政集邮网上营业厅</title>
+<link href="jiyou2.css" rel="stylesheet" />
+<script src="../SpryAssets/SpryEffects.js" type="text/javascript"></script>
+<script src="../jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+<body onload="f18()">
+<a onclick="history.back(-1)" style="text-align: left;">返回</a>
+<!--头部-->
+	<header>
+		<div>
+			<p>
+				<span>你好，[</span>
+				<a href="#" class="a2">请登录</a><span>]</span>
+				<span class="span1">免费注册</span>
+				<span class="spans">|</span>
+				<a href="#" class="a1">个人中心</a><span class="spans"> | </span>
+				<a href="#" class="a2">购物车</a><span class="spans"> | </span>
+				<a href="#" class="a2">收藏夹</a><span class="spans"> | </span>
+				<a href="#" class="a1">关注我们</a><span class="spans"> | </span>
+				<a href="#" class="a1">在线客服</a><span class="spans"> | </span>
+				<a href="#" class="a3" onclick="f11('u1', 1000, '0%', '100%', false)">帮助中心</a>
+			</p>
+			<div class="uls" id="u1" style="display:none">
+				<a href="#">常见问题</a>
+				<a href="#">新手指南</a>
+				<a href="#">活动规则</a>
+				<a href="#">业务规则</a>
+				<a href="#">购物条款</a>
+			</div>
+		</div>
+	</header>
+<!--头部第二部分-->
+	<div class="top">
+	<div class="topD">
+		<div class="div1">
+			<img src="imgs/logo.jpg" />
+			<div >
+				<input type="text" list="search" />
+				<datalist id="search">
+					<option value="生肖邮票"></option>
+					<option value="人物邮票"></option>
+					<option value="景物邮票"></option>
+					<option value="邮票收藏"></option>
+					<option value="珍邮"></option>
+					<option value="故事邮票"></option>
+					<option value="80年代邮票"></option>
+					<option value="21世纪邮票"></option>
+				</datalist>
+				<a href="#" class="a1">搜索</a>
+			</div>
+		</div>
+		<a href="#" class="TopIm"><img src="imgs/service.png" /></a>
+		<div class="div2">
+			<ul class="nav">
+				<li><a href="#" class="c1">首页</a></li>
+				<li><a href="#" class="c1">邮票零售</a></li>
+				<li><a href="#" class="c1">邮品零售</a></li>
+				<li><a href="#" class="c1">集邮者之家</a></li>
+				<li><a href="#" class="c1">地方特色</a></li>
+				<li><a href="#" class="c1">珍邮竞买</a></li>
+				<li><a href="#" class="c1">集邮网院</a></li>
+				<li><a href="#" class="c1">生肖博物馆</a></li>
+				<li>
+					<a href="#" class="c1">查看更多</a>
+					<div class="div1">
+						<span></span>
+						<a href="#" class="c2">零售查询</a>
+						<a href="#" class="c2">大话新邮</a>
+						<a href="#" class="c2">文化专区</a>
+						<a href="#" class="c2">仿印查询</a>
+						<a href="#" class="c2">特许查询</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<marquee>因客户端的多样性与浏览器的多样性，各客户端对于浏览器的兼容性都不一样，我们建议您在windows系统电脑下使用chrome，ie8以上浏览器，体验更流畅</marquee>
+	
+	</div>
+<!--中间部分1-->
+	<div class="content" id="con" onmouseout="f18()">
+		<div class="div1">
+			<div class="CDiv1">
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f1()">票品题材
+						<span>></span>
+					</a>
+					<ul id="d1">
+						<li>生肖</li>
+						<li>年册</li>
+						<li>青少年</li>
+						<li>文化</li>
+						<li>政治</li>
+						<li>经济</li>
+						<li>军事</li>
+						<li>科技</li>
+						<li>风光</li>
+						<li>节日</li>
+						<li>体育</li>
+						<li>实寄</li>
+						<li>珍邮</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f2()">中国邮票
+						<span>></span>
+					</a>
+					<ul id="d2">
+						<li>邮票</li>
+						<li>小型张</li>
+						<li>小全张</li>
+						<li>小本票</li>
+						<li>小版票</li>
+						<li>大版票</li>
+						<li>风琴折</li>
+						<li>本票册</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f3()">邮资封片
+						<span>></span>
+					</a>
+					<ul id="d3">
+						<li>纪念邮资封</li>
+						<li>纪念邮资片</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f4()">个性化邮票
+						<span>></span>
+					</a>
+					<ul id="d4">
+						<li>个性化邮票</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f5()">港澳邮票
+						<span>></span>
+					</a>
+					<ul id="d5">
+						<li>香港邮票</li>
+						<li>澳门邮票</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f6()">外国邮票
+						<span>></span>
+					</a>
+					<ul id="d6">
+						<li>英国</li>
+						<li>美国</li>
+						<li>澳大利亚</li>
+						<li>新西兰</li>
+						<li>加拿大</li>
+						<li>日本</li>   
+    					<li>韩国</li>
+    					<li>新加坡</li>
+    					<li>瑞士</li>
+						<li>法国</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f7()">集邮品
+						<span>></span>
+					</a>
+					<ul id="d7">
+						<li>集邮信封</li>
+						<li>集邮明信片</li>
+						<li>集邮卡</li>
+						<li>集邮折</li>
+						<li>集邮册</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">		
+					<a href="#" class="a1" onmouseover="f8()">集邮商品
+						<span>></span>
+					</a>
+					<ul id="d8">
+						<li>仿印制品</li>
+						<li>挂件</li>
+						<li>摆件</li>
+						<li>贵金属制品</li>
+						<li>纸钞硬币</li>
+						<li>徽章</li>
+						<li>玩具文具</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f9()">集邮用品
+						<span>></span>
+					</a>
+					<ul id="d9">
+						<li>集邮用具</li>
+						<li>空册</li>
+						<li>书籍</li>
+						<li>其他</li>
+					</ul>
+				</div>
+				<div class="ds">
+					<a href="#" class="a1" onmouseover="f10()">更多分类
+						<span>></span>
+					</a>
+				</div>
+			</div>
+			<div class="CDiv2" id="bt">
+				<div class="btn" id="btn"  >
+					<ul>
+						<li onmouseover="f12()" id="l1" onmouseout="f17()">1</li>
+						<li onmouseover="f13()" id="l1" onmouseout="f17()">2</li>
+						<li onmouseover="f14()" id="l1" onmouseout="f17()">3</li>
+						<li onmouseover="f15()" id="l1" onmouseout="f17()">4</li>
+						<li onmouseover="f16()" id="l1" onmouseout="f17()">5</li>
+					</ul>
+				</div>
+			</div>
+			<div class="CDiv3">
+				<div class="do">
+					<ul>
+						<li onmouseover="im1()">安卓
+						</li>
+						<li onmouseover="im2()">微信
+						</li>
+						<li style="margin-right:0" onmouseover="im3()">ios
+						</li>
+					</ul>
+					<div id="im1" style="display:block" class="div1"><img src="imgs/2_Android.png" />
+					</div>
+					<div id="im2" class="div1"><img src="imgs/2_WeChat.jpg" width="200px" /></div>
+					<div id="im3" class="div1"><img src="imgs/2_IOS.jpg" width="200px" /></div>
+				</div>
+				<div class="do" style="margin-top:200px">
+					<ul>
+						<li onmouseover="xw()">新闻</li>
+						<li onmouseover="gg()">公告</li>
+						<li style="margin-right:0" onmouseover="bl()">博览</li>
+					</ul>
+					<div class="div2" style="display:block" id="xw">
+						<a href="#">【新闻】第37届全国最佳邮票 ... </a>
+						<a href="#">【新闻】2017年中国集邮生 ... </a>
+						<a href="#">【新闻】首届中国航空航天邮展 ...</a>
+						<a href="#">【新闻】李玉刚：是邮票带我& ...</a>
+						<a href="#">【新闻】《中华孝道（二）》邮 ...</a>
+						<a href="#">【新闻】ISO大会纪念邮票在 ... </a>
+						<a href="#">查看更多</a>
+					</div>
+					<div class="div2" style="display:none" id="gg">
+						<a href="#">【公告】湖南专区收入破亿感恩 ...</a>
+						<a href="#">【公告】关于《西游记（二）四 ...</a>
+						<a href="#">【公告】关于《第37届全国最 ... </a>
+						<a href="#">【公告】湖南集邮网厅会员招募 ...</a>
+						<a href="#">【公告】关于《相约自然》邮票 ...</a>
+						<a href="#">【公告】狂欢趴 等你来 ...  </a>
+						<a href="#">查看更多</a>
+					</div>
+					<div class="div2" style="display:none" id="bl">
+						<a href="#">【博览】《中国集邮年刊（20 ... </a>
+						<a href="#">【博览】《中国集邮年刊》（2 ...</a>
+						<a href="#">【博览】《中国集邮年刊（20 ... </a>
+						<a href="#">【博览】邮票上的APEC </a>
+						<a href="#">【博览】邮集制作窍门 </a>
+						<a href="#">【博览】《集邮博览》2015 ... </a>
+						<a href="#">查看更多</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--中间Video部分-->
+	<div class="ContentIm">
+		<div class="videos">
+			<div class="video" style="margin-left:-204px">
+				<video src="imgs/周杰伦 - 告白气球.mp4"  controls poster="imgs/161270367.jpg"  width="322" height="180" ></video>
+				<p><a href="#" name="t006">更多</a>>></p>
+			</div>
+			<div class="img1">
+    			<p>推荐商品</p>
+    		</div>
+			<a href="#">
+				<div class="img2">
+					<img src="imgs/yushou1.jpg" style="margin-left:80px;margin-top:7px;"/>
+				</div>
+			</a>
+			<a href="#">
+				<div class="img2">
+					<img src="imgs/mane2.jpg"><img src="imgs/mane2.jpg">
+				</div>
+			</a>
+		</div>
+	
+<!--中间邮票图片部分-->
+<!--1-->
+		<div class="green">
+			<div class="green_top">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/green2.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/green3.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/green4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/green5.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/green7.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/green8.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/green9.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom"></div>
+		</div>
+<!--1结束-->
+<!--2-->
+		<div class="green" style="background:#ffd300">
+			<div class="green_top" style="background:#ffd300">
+				<p>邮品零售专区</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/lingshou.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/2.1.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/2.2.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/lingshou1.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/lingshou2.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/lingshou3.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/lingshou4.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/lingshou5.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src=imgs/lingshou6.jpg>
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-yellow.png)"></div>
+		</div>
+<!--2结束-->
+		<a href="#"><div class="CIm"></div></a>
+<!--3-->
+		<div class="green" style="background:#e75a50">
+			<div class="green_top" style="background:#e75a50">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/3c.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/konglong1.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/konglong2.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/konglong3.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/konglong4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/konglong5.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/konglong6.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/konglong7.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/konglong8.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-red.png)"></div>
+		</div>
+<!--3结束-->
+<!--4-->
+		<div class="green">
+			<div class="green_top">
+				<p>品邮珍藏</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/cangz.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/cangz1.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/cangz2.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/cangz3.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/cangz4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/cangz5.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/cangz6.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/cangz7.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/cangz8.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom"></div>
+		</div>
+<!--4结束-->
+		<a href="#"><div class="CIm"></div></a>
+<!--5-->
+		<div class="green" style="background:#ffd300">
+			<div class="green_top" style="background:#ffd300">
+				<p>纪念珍藏邮品</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/jinian.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/jinian1.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/jinian2.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/jinian3.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/jinian4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/jinian5.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/jinian6.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/jinian7.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-yellow.png)"></div>
+		</div>
+<!--5结束-->
+<!--6-->
+		<div class="green" style="background:#e75a50">
+			<div class="green_top" style="background:#e75a50">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/3.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/kh1.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/kh2.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/kh3.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/kh4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/kh5.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/kh6.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/kh7.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/kh8.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-red.png)"></div>
+		</div>
+<!--6结束-->
+<!--7-->
+		<div class="green">
+			<div class="green_top">
+				<p>一带一路 天国之行</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/y.jpg); background-size:cover"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/green2.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/green3.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/green4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/green5.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/green7.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/green8.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/green9.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom"></div>
+		</div>
+<!--7结束-->
+<!--8-->
+		<div class="green" style="background:#ffd300">
+			<div class="green_top" style="background:#ffd300">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left" style="background:url(imgs/5.jpg)"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/green2.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/green3.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/green4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/green5.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/green7.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/green8.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/green9.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-yellow.png)"></div>
+		</div>
+<!--8结束-->
+<!--9-->
+		<div class="green" style="background:#e75a50">
+			<div class="green_top" style="background:#e75a50">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/green2.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/green3.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/green4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/green5.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/green7.jpg">
+					<div  class="p" title="春夏秋冬小版">
+						<a href="#">春夏秋冬小版</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/green8.jpg">
+					<div  class="p" title="京津冀协同发展">
+						<a href="#">京津冀协同发展</a> 
+					</div>
+				</div>	
+				<p>
+					<strong>¥3.60</strong>
+					<span>[未售]</span>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/green9.jpg">
+					<div  class="p" title="京津冀协同发展小全张">
+						<a href="#">京津冀协同发展小全张</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>	
+			 </div>
+			 <div class="green_bottom" style="background:url(imgs/b-red.png)"></div>
+		</div>
+<!--9结束-->
+<!--10-->
+		<div class="green">
+			<div class="green_top">
+				<p>邮品零售</p>
+				<span><a href="#">查看更多>></a></span>
+			</div>
+			<a href="#"><div class="green_left"></div></a>
+			<div class="green_div2">
+				<div class="div">
+					<img src="imgs/green2.jpg">
+					<div  class="p" title="《第23届亚洲乒乓球锦标赛》纪念邮资明信片">
+						<a href="#">《第23届亚洲乒乓球锦标赛》纪念邮资明信片</a> 
+					</div>  	
+				</div>
+				<p>	
+					<strong>¥1.20</strong>
+					<time></time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div3">
+				<div class="div">
+					<img src="imgs/green3.jpg">
+					<div  class="p" title="红山文化玉器">
+						<a href="#">红山文化玉器</a> 
+					</div>  	
+				</div>
+				<p>
+					<strong>¥3.60</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div4">
+				<div class="div">
+					<img src="imgs/green4.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）">
+						<a href="#">中国古典文学名著－－《西游记》（二）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div5" >
+				<div class="div">
+					<img src="imgs/green5.jpg">
+					<div  class="p" title="中国古典文学名著－－《西游记》（二）小版">
+						<a href="#">中国古典文学名著－－《西游记》（二）小版</a>
+					</div>
+				</div>
+				<p>
+					<strong>¥10.8</strong>
+					<span>[预售]</span>
+				</p>
+			</div>
+			<div class="green_div6">
+				<div class="div">
+					<img src="imgs/green6.jpg">
+					<div  class="p" title="春夏秋冬">
+						<a href="#">春夏秋冬</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥5.40</strong>
+					<time>[无货]</time>
+				</p>
+			</div>
+			<div class="green_div7">
+				<div class="div">
+					<img src="imgs/green7.jpg">
+					<div  class="p" title="《此物最相思》邮册（邮政联合）">
+						<a href="#">《此物最相思》邮册（邮政联合）</a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥520.00</strong>
+				</p>
+			</div>
+			<div class="green_div8">
+				<div class="div">
+					<img src="imgs/green8.jpg">
+					<div  class="p" >
+						<a href="#">《相思鸟》邮票水晶礼盒（邮政联合）</a> 
+					</div>
+				</div>	
+				<p>
+					<strong> ¥1314.00</strong>
+				</p>
+			 </div>
+			<div class="green_div9">
+				<div class="div">
+					<img src="imgs/10.8.jpg">
+					<div  class="p">
+						<a href="#">《江山如画》邮票 镇纸珍藏 </a> 
+					</div>
+				</div>
+				<p>
+					<strong>¥169.00</strong>
+					
+				</p>	
+			 </div>
+			 <div class="green_bottom"></div>
+		</div>
+<!--10结束-->
+	</div>
+<!--底部部分1-->
+	<div class="footer1">
+			<ul>
+				<li>
+					<img src="imgs/fw1.jpg" alt="" />
+					<strong>品质保证</strong>
+				<p>品质护航，购物无忧</p>
+				</li>
+				<li>
+					<img src="imgs/fw2.jpg" alt="" />
+					<strong>特色服务</strong>
+				<p>为您呈现不一样的服务</p>
+				</li>
+				<li>
+					<img src="imgs/fw3.jpg" alt="" />
+					<strong>集藏文化</strong>
+				<p>收藏 投资 交流</p>
+				</li>
+				<li>
+					<img src="imgs/fw4.jpg" alt="" />
+					<strong>联系我们</strong>
+				<p>11185-9-1 11185-1-2-1</p>
+				</li>
+			</ul>
+		</div>
+<!--底部部分2-->
+	<div class="footer2">
+		<div class="div1">
+			<div>
+				<h1>新手上路</h1>
+				<a href="#">积分规则</a><br />
+				<a href="#">购物流程</a><br />
+				<a href="#">常见问题</a><br />
+				<a href="#">注册服务条款</a><br />
+				<a href="#">隐私保护政策</a>
+			</div>
+			<div>
+				<h1>支付方式</h1>
+				<a href="#">支付方式</a><br />
+				<a href="#">付款常见问题</a>
+			</div>
+			<div>
+				<h1>配送方式</h1>
+				<a href="#">配送范围</a><br />
+				<a href="#">配送方式</a>
+			</div>
+			<div>
+				<h1>服务</h1>
+				<a href="#">换货协议</a><br />
+				<a href="#">保证金规则介绍</a><br />
+				<a href="#">竞买流程及注意事项</a><br />
+				<a href="#">免责条款</a><br />
+				<a href="#">关于我们</a>
+			</div>
+		</div>
+	</div>
+<!--底部-->
+	<footer>
+		因客户端的多样性与浏览器的多样性，各客户端对于浏览器的兼容性都不一样，我们建议您在windows系统电脑下使用chrome，ie8以上浏览器，体验更流畅；<br /> Copyright © 2003-2014 中国邮政版权所有 备案/许可证编号为：京ICP备11025334号 经营许可证编号:京ICP证110573号 
+	</footer>
+</body>
+<script>
+var btn=document.getElementById("btn");
+var z=btn.getElementsByTagName("li");
+/*二维码*/
+function im1(){
+	document.getElementById("im1").style.display="";
+	document.getElementById("im2").style.display="none";
+	document.getElementById("im3").style.display="none";
+}
+function im2(){
+	document.getElementById("im1").style.display="none";
+	document.getElementById("im2").style.display="";
+	document.getElementById("im3").style.display="none";
+}
+function im3(){
+	document.getElementById("im1").style.display="none";
+	document.getElementById("im2").style.display="none";
+	document.getElementById("im3").style.display="";
+}
+/*新闻  公告   博览*/
+function xw(){
+	document.getElementById("xw").style.display="";
+	document.getElementById("gg").style.display="none";
+	document.getElementById("bl").style.display="none";
+}
+function gg(){
+	document.getElementById("xw").style.display="none";
+	document.getElementById("gg").style.display="";
+	document.getElementById("bl").style.display="none";
+}
+function bl(){
+	document.getElementById("xw").style.display="none";
+	document.getElementById("gg").style.display="none";
+	document.getElementById("bl").style.display="";
+}
+/*帘动*/
+function f11(targetElement,duration,from,to,toggle){
+	var i=document.getElementById("u1");
+	if(i.style.display=="none"){
+		Spry.Effect.DoBlind(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
+		i.style.display="";
+	}
+	else{
+		i.style.display="none";
+	}
+}
+var colors=["#1cb37a","#ff9900","#1cb37a","#66ffff","#1cb37a"];
+var c=0;
+function f18(){
+	if(c==colors.length){
+		c=0;
+	}
+	document.getElementById("con").style.backgroundColor=colors[c];
+	c++;
+}
+var timer=setInterval("f18()",2000);
+function f12(){
+	var l=document.getElementById("l1");
+	l.style.cursor="wait";
+	document.getElementById("bt").style.animation="none";
+	document.getElementById("bt").style.backgroundImage="url(imgs/1.jpg)";
+	document.getElementById("con").style.backgroundColor="#1cb37a";
+	clearInterval(timer);
+}
+function f13(){
+	var l=document.getElementById("l1");
+	l.style.cursor="wait";
+	document.getElementById("bt").style.animation="none";
+	document.getElementById("bt").style.backgroundImage="url(imgs/2.jpg)";
+	document.getElementById("con").style.backgroundColor="#ff9900";
+	clearInterval(timer);
+}
+function f14(){
+	var l=document.getElementById("l1");
+	l.style.cursor="wait";
+	document.getElementById("bt").style.animation="none";
+	document.getElementById("bt").style.backgroundImage="url(imgs/3.jpg)";
+	document.getElementById("con").style.backgroundColor="#1cb37a";
+	clearInterval(timer);
+}
+function f15(){
+	var l=document.getElementById("l1");
+	l.style.cursor="wait";
+	document.getElementById("bt").style.animation="none";
+	document.getElementById("bt").style.backgroundImage="url(imgs/4.jpg)";
+	document.getElementById("con").style.backgroundColor="#66ffff";
+	clearInterval(timer);
+}
+function f16(){
+	var l=document.getElementById("l1");
+	l.style.cursor="wait";
+	document.getElementById("bt").style.animation="none";
+	document.getElementById("bt").style.backgroundImage="url(imgs/5.jpg)";
+	document.getElementById("con").style.backgroundColor="#1cb37a";
+	clearInterval(timer);
+}
+function f17(){
+	var l=document.getElementById("l1");
+	var b=document.getElementById("bt");
+	l.style.cursor="pointer";
+	if(l.style.cursor=="pointer"){
+		document.getElementById("bt").style.animation="changeb linear 10s infinite";
+	}
+}
+</script>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>林的森林书</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: black;
+			color: white;
+			text-align: center;
+		}
+		.heart3d{/*3d心形效果盒子*/
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 100px;
+			height: 160px;
+			transform-style: preserve-3d;
+			animation: spin 10s linear infinite ;
+			z-index: -10;
+		}
+		@keyframes spin{
+			to{
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+		.heartRoad{
+			position: absolute;
+			width: 100px;
+			height: 160px;
+			border: solid #f22613;
+			border-width: 1px 1px 0 0;
+			border-radius: 50% 50% 0/40% 50% 0;
+			/*第一个值是设置top-left;而第二个值是top- right和bottom-left并且他们会相等,第三个值是设置bottom-right*/
+		}
+		.cube{/*立体盒子*/
+			position: relative;
+			width: 50px;
+			transform-style: preserve-3d;/*设置3d环境*/
+			transform:translateX(25px) translateY(54px) translateZ(25px);
+		}
+		.cube div{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+		}
+		.cube div img{
+			width: 50px;
+			height: 50px;
+		}
+		.cube div:nth-child(1){
+			left: 0;
+			top: -50px;
+			transform-origin: bottom;/*旋转默认值*/
+			transform:rotateX(90deg);
+		}
+		.cube div:nth-child(2){
+			left: 0;
+			top: 50px;
+			transform-origin: top;
+			transform: rotateX(-90deg);
+		}
+		.cube div:nth-child(3){
+			left: -50px;
+			top: 0px;
+			transform-origin: right;
+			transform: rotateY(-90deg);
+		}
+		.cube div:nth-child(4){
+			left: 50px;
+			top: 0px;
+			transform-origin: left;
+			transform: rotateY(90deg);
+		}
+		.cube div:nth-child(5){
+			left: 0;
+			top: 0;
+		}
+		.cube div:nth-child(6){
+			left: 0;
+			top: 0;
+			transform: translateZ(-50px);
+		}
+		html>/**/body header{text-align: center;padding: 10px 0px}
+		nav{text-align: center;}
+		nav a{
+			display: inline-block;
+			padding: 10px;
+			color: white;
+			text-decoration: none;
+		}
+		nav a i{
+			display: inline-block;
+			margin-right: 5px;
+		}
+		/*让火狐浏览器能应用iconfont*/
+		@font-face {font-family: "iconfont";
+          src: url('iconfont.eot'); /* IE9*/
+          src: url('iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('iconfont.woff') format('woff'), /* chrome, firefox */
+          url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+          url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .iconfont {
+          font-family:"iconfont" !important;
+          font-size:30px;
+          font-style:normal;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke-width: 0.2px;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .dview{
+        	padding-left: 10px;
+        	padding-top: 10px;
+        }
+	</style>
+	<script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+</head>
+<body ng-app="routeApp">
+	<header>Welcome to my zone</header>
+	<nav>
+		<a href="#!/"><i class="iconfont">&#xe606;</i>About me</a>
+		<a href="Page/demo.html "><i class="iconfont">&#xe608;</i>Demoes</a>
+		<a href="Book/book.html"><i class="iconfont">&#xe600;</i>Forest book of the forest</a>
+	</nav>
+	<div class="heart3d">
+		<div class="cube">
+			<div><img src="images/1.jpg"></div>
+			<div><img src="images/2.jpg"></div>
+			<div><img src="images/3.jpg"></div>
+			<div><img src="images/4.jpg"></div>
+			<div><img src="images/5.jpg"></div>
+			<div><img src="images/6.jpg"></div>
+		</div>
+	</div>
+	<div class="dview" ng-view ng-controller="demoController"></div>
+</body>
+<script type="text/javascript">
+	var heartRoad = document.getElementsByClassName("heart3d")[0];
+	for (var i=0;i<36 ;i++ )
+	{
+		var oDiv = document.createElement("div");
+		oDiv.className = "heartRoad";
+		oDiv.style.transform = "rotateY("+i*10+"deg) rotateZ(45deg) translateX(30px)";
+		heartRoad.appendChild(oDiv);
+	}
+	angular.module("routeApp",['ngRoute'])
+	.controller("demoController", function ($scope) {
+        $scope.isOpen = false;
+        $scope.list = [
+            {label: "中国邮政集邮网",href:"../Page/China post/index.html"},
+            {label: "baidu.com",href:"http://www.baidu.com"},
+            {label: "angular.io",href:""}
+        ]
+    })
+	.config(['$routeProvider',function ($routeProvider) {
+        $routeProvider.when('/',{template:
+        	"<h2>Welcome to the forest book of Lin, I am Lin</h2>"+
+        	"<p>After 95, Leo sister, web front-end developers</p>"+
+        	"<p>Name:林秀慧    Mail:lin_xiu_hui@163.com</p>"
+        })
+    }])
+</script>
+</html>

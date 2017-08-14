@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格操作作业</title>
+    <style>
+        body{
+            background: black;
+            color: white;
+            font-size: 1.125rem;
+        }
+        a{
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        table {
+            width: 80%;
+            height: 40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        table td {
+            width: 25%;
+        }
+
+        input {
+            padding: 0;
+            margin: 0;
+            width: 80%;
+            height: 20px;
+        }
+    </style>
+    <script src="jQuery/jquery-3.2.1.js"></script>
+</head>
+<body>
+<a onclick="history.back(-1)">返回</a>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>商品名称</th>
+        <th>数量</th>
+        <th>价格</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>防滑真皮休闲鞋</td>
+        <td>12</td>
+        <td>￥568.50</td>
+        <td><a href="javascript:void(0);" de>删除</a>
+            <a href="javascript:void(0);" up>修改</a></td>
+    </tr>
+    <tr>
+        <td>防滑真皮休闲鞋</td>
+        <td>12</td>
+        <td>￥568.50</td>
+        <td><a href="javascript:void(0);" de>删除</a>
+            <a href="javascript:void(0);" up>修改</a></td>
+    </tr>
+</table>
+<div style="text-align: center;margin-top: 10px">
+    <input type="button" value="增加订单" id="add" style="height: 30px;width: 30%">
+</div>
+</body>
+<script>
+    function isEditting() {
+        var state = $("table").attr("editState");
+        if (state == "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function saveData() {
+        var par=$("input:first").parent().parent();//获取行
+        var td=par.find("td");
+        console.log(td);
+        for(var i=0;i<td.length-1;i++){
+            var ss=$(td.eq(i).find("input")).val();
+            $(td.eq(i)).html(ss);
+        }
+        $(par.find("a:last")).html("修改");
+        $("table").attr("editState", false);
+    }
+    function clearData() {
+        var par=$("input:first").parent().parent();
+        console.log(par);
+        var td=par.find("td");
+        for (var i = 0; i < td.length - 1; i++) {
+            var data = $(td.eq(i)).attr("data");
+            $(td.eq(i)).html(data) ;
+        }
+        $(par.find("a:last")).html("修改");
+        $("table").attr("editState", false);
+    }
+    function createOrder() {
+        if (!(orderName = prompt("请输入商品名称")) ||
+            !(orderNum = prompt("请输入商品数量")) ||
+            !(orderPrice = prompt("请输入商品价钱"))) {
+            alert("你输入的内容有误");
+        } else {
+            var s="<tr><td>"+orderName+"</td><td>"
+                +orderNum+"</td><td>"
+                +orderPrice+"</td><td><a href='javascript:void(0);' de>删除</a>" +
+                " <a href='javascript:void(0);' up>修改</a></td></tr>";
+            $(s).insertAfter($("tr:last"));
+        }
+    }
+    function editting(e) {
+        var tbRow=$(e).parent().parent();
+        var ch=tbRow.find("td");
+        for (var i = 1; i < ch.length - 1; i++) {
+            var cell = ch[i];
+            cell.setAttribute("data", cell.innerHTML);
+            cell.innerHTML = "<input type='text' value='" + cell.innerHTML + "'>";
+        }
+        $(e).html("确定") ;
+        tbRow.parent().parent().attr("editState", true);
+    }
+    $("body").on("click","[up]",function () {
+            if(isEditting()){
+                if($(this).html()=="确定") {
+                    saveData();
+                }else {
+                    if(confirm("您上次修改的内容未保存，是否保存？")){
+                        saveData();
+                    }else{
+                        clearData();
+                    }
+                    editting(this);
+                }
+            }else{
+                editting(this);
+            }
+    })
+    $("body").on("click","[de]",function () {
+        if(isEditting()){
+            if(confirm("您上次修改的内容未保存，是否保存？")) {
+                saveData();
+                if(confirm("是否继续执行删除操作？")){
+                    $(this).parent().parent().remove();
+                }
+            }else{
+                clearData();
+                if(confirm("是否继续执行删除操作？")){
+                    $(this).parent().parent().remove();
+                }
+            }
+        } else{
+            $(this).parent().parent().remove();
+        }
+    })
+    $("[value='增加订单']").click(function () {
+        if(isEditting()){
+            if(confirm("您上次修改的内容未保存，是否保存？")){
+                saveData();
+            }else{
+                clearData();
+            }
+            createOrder();
+        }else{
+            createOrder();
+        }
+    })
+</script>
+</html>

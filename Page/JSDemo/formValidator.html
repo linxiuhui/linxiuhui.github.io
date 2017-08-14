@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证之用户申请</title>
+</head>
+<style>
+    body{
+        background: black;
+        color: white;
+        font-size: 0.8rem;
+    }
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+    }
+    .fm div {
+        padding: 5px;
+    }
+    .fm mark{
+        background: none;
+        color: red;
+    }
+    .fm label {
+        width: 120px;
+        display: inline-block;
+        text-align: left;
+    }
+    .fm span {
+        color: red;
+        margin-left: 120px;
+    }
+    mark:hover{
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<a onclick="history.back(-1)">返回</a>
+<form class="fm" id="form1">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <label>登录名：</label><input id="userName" type="text" ><mark>*</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>真实姓名：</label><input id="name" type="text" ><mark>*</mark><br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>登录密码：</label><input id="pwd" type="password" ><mark>*</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>性别：</label><input type="radio" checked>女<input type="radio">男<br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>确认密码：</label><input id="pwd2" type="password" ><mark>*</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div><label>省/市：</label>
+                    <select id="mySelect1" onchange="change()">
+                        <option value="黑龙江省" selected>黑龙江省</option>
+                        <option value="新疆省">新疆省</option>
+                        <option value="四川省">四川省</option>
+                        <option value="江西省">江西省</option>
+                    </select>
+                    <select id="mySelect2">
+                        <option value="哈尔滨">哈尔滨</option>
+                        <option>齐齐哈尔</option>
+                        <option>鸡西</option>
+                        <option>鹤岗</option>
+                        <option>双鸭山</option>
+                        <option>大庆</option>
+                        <option>伊春</option>
+                        <option>佳木斯</option>
+                        <option>七台河</option>
+                        <option>牡丹江</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>验证码：</label><input id="yz" type="text">
+                    <mark onclick="showNum(this)" style="background: #649fd7;color: #000;padding: 5px">获取验证码</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>地址：</label><input id="ad" type="text" ><br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>密码提示问题：</label><input id="problem" type="text"><mark>*</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>邮政编码：</label><input type="text" id="post"><br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>问题答案：</label><input id="answer" type="text"><mark>*</mark><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>生日：</label><input type="date">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>电子邮箱：</label><input id="myEmail" type="text"><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>身份证号码：</label><input id="PIN" type="text" ><br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>手机号码：</label><input id="phone" type="text" ><br><span></span>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label>联系电话：</label><input id="mobile" type="text" ><br><span></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <input type="button" value="提交" onclick="check()">
+            </td>
+            <td align="center">
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    /**
+     * 获取input的value属性
+     */
+    function G(id) {
+        var e = document.getElementById(id);
+        if (e) {
+            return e.value;
+        } else {
+            return "";
+        }
+    }
+    /**
+     * 显示出错信息
+     */
+    function showError(msg, id) {
+        var e = document.getElementById(id);
+        if (e) {
+            var span = e.parentNode.getElementsByTagName("span")[0];
+            var inp = e.parentNode.getElementsByTagName("input")[0];
+            inp.style.outline="1px solid red";
+            span.innerHTML = msg;
+        }
+        return false;
+    }
+    /*
+    清除所有错误
+    */
+    var spans=document.getElementsByTagName("span");
+    function hids() {
+        for(var i=0;i<spans.length;i++){
+            spans[i].innerHTML="";
+            spans[i].parentNode.getElementsByTagName("input")[0].outline="0px";
+        }
+    }
+    /*
+     验证通过
+    */
+    function  alerts() {
+        var count=0;
+        for(var i=0;i<spans.length;i++){
+            if (spans[i].innerHTML==""){
+                count+=1;
+            }
+        }
+        if(count==spans.length){
+            alert("提交数据成功");
+            document.getElementById("form1").submit();
+        }
+        else {
+            return "";
+        }
+    }
+    /**
+     * 判断表单是否正确
+     * @returns {boolean}
+     */
+    function check() {
+        hids();
+        //姓名 不能为空
+        var text = G("userName");
+        //登录名不能重复
+        //ajax
+        if(!text){
+            showError("用户名不能为空","userName");
+        }
+        if (text.length < 6||text.length>20){
+            showError("用户名必须大于6位且小于20位", "userName");
+        }
+        else{
+            var usern = /^([a-zA-Z0-9]{1,})$/;//匹配，至少出现一次
+            console.log(text.match(usern));
+            if(!text.match(usern)){
+                showError("用户名只能由字母和数字组成", "userName");
+            }
+            else{
+                var n = text.charCodeAt(0);
+                if(n>=48&&n<=57){
+                    showError("用户名首字母不能为数字","userName");
+                }
+            }
+        }
+        //真实姓名是否为空
+        text=G("name");
+        if(!text){
+            showError("真实姓名不能为空","name");
+        }
+        else{
+            var name=/^[\u4e00-\u9fa5]{2,5}$/;
+            if(!text.match(name)){
+                showError("真实姓名格式错误","name");
+            }
+        }
+        //检查密码 不能少于6位 两个值必须相等
+        text = G("pwd");
+        if(!text){
+            showError("密码不能为空","pwd");
+        }
+        else if (text.length < 6||text.length>20) {
+            showError("密码不能少于6位且不能超过20位", "pwd");
+        }
+        var text2 = G("pwd2");
+        if(!text2){
+            showError("请再次确认密码", "pwd2");
+        }
+        else{
+            if (text != text2) {
+                showError("两次密码必须相同", "pwd2");
+            }
+        }
+        //验证码
+        text=G("yz");
+        if(!text){
+            showError("请输入验证码", "yz");
+        }
+        else{
+            var m=document.getElementsByTagName("mark")[4];
+            if(!(text==m.innerHTML)){
+                showError("验证码错误", "yz");
+                showNum(m);
+            }
+        }
+        //密码提示问题
+        text=G("problem");
+        if(!text){
+            showError("密码提示问题不能为空","problem");
+        }
+        else{
+            var p=/^.{20,50}$/;//20-50个任意字符
+            if(!text.match(p)){
+                showError("请输入20-50个任意字符","problem");
+            }
+        }
+        //问题答案
+        text=G("answer");
+        if(!text){
+            showError("问题的答案不能为空","answer");
+        }
+        else{
+            //地址
+            text=G("ad");
+            if(text){
+                var ad=/^[0-9\u4e00-\u9fa5]{20,50}$/;
+                if(!text.match(ad)){
+                    showError("地址格式错误，请输入20-50位汉字和数字", "ad");
+                }
+            }
+            //邮政编码
+            text=G("post");
+            if(text){
+                var posts=/^\d{6}$/;
+                if(!text.match(posts)){
+                    showError("邮政编码格式错误","post");
+                }
+            }
+            //身份证号码
+            text=G("PIN");
+            if(text){
+                var pin=/(^\d{17}[0-9Xx]$)|(^\d{15}$)/;//正则表达式，前17位一定是数字，最后一位为数字或字母xX，或者为15位数字
+                if(!text.match(pin)){
+                    showError("身份证号码格式错误","PIN");
+                }
+            }
+            //电子邮箱
+            //lastIndexOf获取最后一个@的索引位置
+            text = G("myEmail");
+            if(text){
+                var em=/^\w+@{1}\w+\.{1}\w+$/;
+                if(!text.match(em)){
+                    showError("输入的邮箱格式不正确", "myEmail");
+                }
+            }
+            //手机号码
+            text=G("phone");
+            if(text){
+                var re = /^1\d{10}$/;//以1开头
+                if(!text.match(re)){
+                    showError("手机号码格式错误","phone");
+                }
+            }
+            //固定电话
+            text=G("mobile");
+            if(text){
+                var mobiles = /(^0\d{3}-\d{8}$)|(^0\d{2}-\d{8}$)/;
+                if(!text.match(mobiles)){
+                    showError("固定电话格式错误","mobile");
+                }
+            }
+            alerts();
+        }
+    }
+    function change() {
+        var s = document.getElementById("mySelect1");
+        var options = s.options;
+        var o = options[s.selectedIndex];
+        var mySelect2=document.getElementById("mySelect2");
+        if(o.value=="黑龙江省"){
+            mySelect2.innerHTML="";
+            mySelect2.add(new  Option("哈尔滨",0));
+            mySelect2.add(new Option("齐齐哈尔",1));
+            mySelect2.add(new Option("鸡西",2));
+            mySelect2.add(new  Option("鹤岗",3));
+            mySelect2.add(new  Option("双鸭山",4));
+            mySelect2.add(new  Option("大庆",5));
+            mySelect2.add(new  Option("伊春",6));
+            mySelect2.add(new  Option("佳木斯",7));
+            mySelect2.add(new  Option("七台河",8));
+            mySelect2.add(new  Option("牡丹江",9));
+        }
+        if (o.value=="新疆省"){
+            mySelect2.innerHTML="";
+            mySelect2.add(new Option("伊宁市",0));
+            mySelect2.add(new Option("乌鲁木齐",1));
+            mySelect2.add(new Option("奎屯市",2));
+        }
+        if (o.value=="四川省"){
+            mySelect2.innerHTML="";
+            mySelect2.add(new Option("成都",0));
+            mySelect2.add(new Option("遂宁",1));
+            mySelect2.add(new Option("绵阳",2));
+        }
+        if (o.value=="江西省"){
+            mySelect2.innerHTML="";
+            mySelect2.add(new Option("南昌市",0));
+            mySelect2.add(new Option("九江市",1));
+            mySelect2.add(new Option("抚州市",2));
+        }
+    }
+    //验证码
+    function showNum(e) {
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var maxPos = chars.length;
+        var pwd = '';
+        for (i = 0; i < 4; i++) {
+            //0~32的整数
+            pwd += chars.charAt(Math.floor(Math.random() * (maxPos+1)));
+        }
+       e.innerHTML=pwd;
+    }
+</script>
+</body>
+</html>

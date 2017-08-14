@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小方块移动</title>
+    <style>
+        body{
+            background: black;
+            color: white
+        }
+        a{
+            cursor: pointer;
+        }
+        .snake{
+            background: #f00;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<a onclick="history.back(-1)">返回</a>
+<p>请按上下左右箭头，小方块就会跑啦</p>
+<div class="snake" id="snakes" style="position:absolute;left: 100px;top:100px;"></div>
+</body>
+</html>
+<script type="text/javascript">
+        //需求：实现方块的移动   通过上下左右按键来控制方向
+        //思路：定时器，键盘事件
+        //通过js来改变元素left top的属性。
+        //控制元素方向
+        window.onload=function(){
+            var move=0;
+            function Move(){
+                var snake=document.getElementById("snakes");
+                var w=document.documentElement.clientWidth-20;//获取浏览器当前宽度
+                var h=document.documentElement.clientHeight-20;
+                switch (move){
+                    case 37:
+                        if(parseFloat(snake.style.left)<1){
+                            move=0;
+                        }
+                        else{
+                            snake.style.left=parseFloat(snake.style.left)-10+"px";//左移
+                        }
+                        break;
+                    case 38:
+                        if(parseFloat(snake.style.top)<1){
+                            move=0;
+                        }
+                        else{
+                            snake.style.top=parseFloat(snake.style.top)-10+"px";//上移
+                        }
+                        break;
+                    case 39:
+                        if(parseFloat(snake.style.left)>w-20){
+                            move=0;
+                        }
+                        else {
+                            snake.style.left=parseFloat(snake.style.left)+10+"px";//右移
+                        }
+                        break;
+                    case 40:
+                        if(parseFloat(snake.style.top)>h){
+                            move=0;
+                        }
+                        else{
+                            snake.style.top=parseFloat(snake.style.top)+10+"px";//下移
+                        }
+                        break;
+                }
+            }
+            document.onkeydown=function(event) {
+                var e=event||window.event; 
+                move=e.keyCode||e.which||e.charCode;
+            }
+            setInterval(Move,100);
+        }  
+    </script>

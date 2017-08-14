@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出菱形</title>
+    <style>
+        body{
+            background: black;
+            color: white
+        }
+        a{
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="text-align: center">
+<a onclick="history.back(-1)" style="text-align: left;">返回</a>
+<script type="text/javascript">
+    /*
+ 要求：实现一个菱形
+ 思路：1.使用for循环
+ 2.通过最外层的i变量来控制打印次数，即控制行数。
+ 3.排版方式    a.通过前面打印空格实现
+ b.通过text-align实现.
+ */
+    var row;
+    row=prompt("请输入三角形行数")
+   // 方法一:
+    //控制行数
+    /*for(var i=1;i<row;i++){
+        //控制列数
+        for(var j=0;j<i;j++){
+            document.write(" * ");
+        }
+        document.write("<br>");
+    }
+    //打印菱形下部分
+    for(var i=row;i>0;i--){
+        //控制列数
+        for(var j=0;j<i;j++){
+            document.write(" * ");
+        }
+        document.write("<br>");
+    }*/
+    //方法二:
+    /*要求最外面只有一個for循還*/
+    for(var i=1;i<row;i++){
+        //控制列数
+        var a = row / 2;
+        var colume = i < a ? i % a : a - i % a;
+        console.log(colume);
+        for (var j = 1; j <=colume; j++) {
+            document.write(" * ");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
